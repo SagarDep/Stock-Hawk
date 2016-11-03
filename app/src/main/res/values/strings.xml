@@ -11,4 +11,6 @@
   <string name="input_prefill"></string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
   <string name="invalid_stock_ticker">Invalid Stock ticker</string>
+  <string name="success_adding_ticker">Successfully added stock </string>
+
 </resources>

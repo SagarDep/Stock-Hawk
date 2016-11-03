@@ -33,12 +33,19 @@ public class StockIntentService extends IntentService {
     }
     // We can call OnRunTask from the intent service to force it to run immediately instead of
     // scheduling a task.
+    Handler handler = new Handler(getMainLooper());
+
     try {
       stockTaskService.onRunTask(new TaskParams(intent.getStringExtra("tag"), args));
-    }catch (Exception e){
+      handler.post(new Runnable() {
+        @Override
+        public void run() {
+          successAddingStockToast();
+        }
+      });
 
+    }catch (Exception e){
       // If stock is invalid, display invalid ticker toast message by posting message to UI Thread
-      Handler handler = new Handler(getMainLooper());
       handler.post(new Runnable() {
         @Override
         public void run() {
@@ -48,6 +55,9 @@ public class StockIntentService extends IntentService {
     }
   }
 
+  public void successAddingStockToast(){
+    Toast.makeText(getApplicationContext(), getString(R.string.success_adding_ticker), Toast.LENGTH_SHORT).show();
+  }
   public void displayInvalidStockToast(){
     Toast.makeText(getApplicationContext(), getString(R.string.invalid_stock_ticker), Toast.LENGTH_LONG).show();
   }
