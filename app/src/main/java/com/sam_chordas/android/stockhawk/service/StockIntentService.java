@@ -3,6 +3,7 @@ package com.sam_chordas.android.stockhawk.service;
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -32,8 +33,19 @@ public class StockIntentService extends IntentService {
     }
     // We can call OnRunTask from the intent service to force it to run immediately instead of
     // scheduling a task.
+    try {
       stockTaskService.onRunTask(new TaskParams(intent.getStringExtra("tag"), args));
+    }catch (Exception e){
 
+      // If stock is invalid, display invalid ticker toast message by posting message to UI Thread
+      Handler handler = new Handler(getMainLooper());
+      handler.post(new Runnable() {
+        @Override
+        public void run() {
+          displayInvalidStockToast();
+        }
+      });
+    }
   }
 
   public void displayInvalidStockToast(){
