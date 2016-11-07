@@ -37,12 +37,6 @@ public class StockIntentService extends IntentService {
 
     try {
       stockTaskService.onRunTask(new TaskParams(intent.getStringExtra("tag"), args));
-      handler.post(new Runnable() {
-        @Override
-        public void run() {
-          successAddingStockToast();
-        }
-      });
 
     }catch (Exception e){
       // If stock is invalid, display invalid ticker toast message by posting message to UI Thread
