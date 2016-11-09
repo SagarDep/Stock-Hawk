@@ -82,15 +82,15 @@ public class StockDetailActivity extends AppCompatActivity {
              */
             switch (position) {
                 case 0:
-                    fragment = NewsFragment.newInstance();
+                    fragment = NewsFragment.newInstance("YHOO");
                     break;
                 case 1:
-                    fragment = NewsFragment.newInstance();
+                    fragment = NewsFragment.newInstance("YHOO");
                     break;
                 case 2:
-                    fragment = NewsFragment.newInstance();
+                    fragment = NewsFragment.newInstance("YHOO");
                 default:
-                    fragment = NewsFragment.newInstance();
+                    fragment = NewsFragment.newInstance("YHOO");
                     break;
             }
 
