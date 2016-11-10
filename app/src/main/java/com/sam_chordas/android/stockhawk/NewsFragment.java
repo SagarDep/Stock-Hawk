@@ -72,7 +72,7 @@ public class NewsFragment extends Fragment {
             @Override
             public void onFailure(Call<List<NewsModel>> call, Throwable t) {
                 failedToGetDataToast();
-
+                Log.d("RESPONSE", t.toString());
             }
         });
 
