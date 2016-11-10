@@ -27,6 +27,7 @@ import com.google.android.gms.gcm.GcmNetworkManager;
 import com.google.android.gms.gcm.PeriodicTask;
 import com.google.android.gms.gcm.Task;
 import com.melnykov.fab.FloatingActionButton;
+import com.sam_chordas.android.stockhawk.Constants;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.StockDetailActivity;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
@@ -88,11 +89,16 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     recyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener(this,
             new RecyclerViewItemClickListener.OnItemClickListener() {
               @Override public void onItemClick(View v, int position) {
-                //TODO: do something on item click
-                Intent intent = new Intent(MyStocksActivity.this, StockDetailActivity.class);
-                startActivity(intent);
 
-                Toast.makeText(getApplicationContext(), "This is a test", Toast.LENGTH_SHORT).show();
+                 /**
+                 *Send stock symbol info of the clicked recyclerview item
+                  *  to the {@link StockDetailActivity}
+                 */
+                TextView tv = (TextView) v.findViewById(R.id.stock_symbol);
+                String stock = tv.getText().toString();
+                Intent intent = new Intent(MyStocksActivity.this, StockDetailActivity.class);
+                intent.putExtra(Constants.SYMBOL, stock);
+                startActivity(intent);
               }
             }));
     recyclerView.setAdapter(mCursorAdapter);

@@ -18,6 +18,7 @@ import android.view.MenuItem;
  */
 public class StockDetailActivity extends AppCompatActivity {
     private static final String LOG_TAG = StockDetailActivity.class.getSimpleName();
+    private String mSymbol;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class StockDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // TODO: Create menu xml file and inflate it
+        // TODO: Create menu xml file for sharing stock data and inflate it
         //getMenuInflater().inflate(R.menu.);
         return super.onCreateOptionsMenu(menu);
     }
@@ -51,20 +52,31 @@ public class StockDetailActivity extends AppCompatActivity {
      * Link layout elements from XML and setup the toolbar
      */
     public void initializeScreen() {
+
+        // Retrieve the stock symbol sent via an intent
+        String symbol = getIntent().getStringExtra(Constants.SYMBOL);
+        if (symbol != null && symbol.length() != 0) {
+            mSymbol = symbol;
+        }
+
+        // Initialize view pager
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
         /**
-         * Create SectionPagerAdapter, set it as adapter to viewPager with setOffscreenPageLimit(2)
+         * Create SectionPagerAdapter, set it as adapter to viewPager with setOffscreenPageLimit(3)
          **/
         SectionPagerAdapter adapter = new SectionPagerAdapter(getSupportFragmentManager());
-        viewPager.setOffscreenPageLimit(3);
-        viewPager.setAdapter(adapter);
 
-        /**
-         * Setup the mTabLayout with view pager
-         */
-        tabLayout.setupWithViewPager(viewPager);
+        if (viewPager != null && tabLayout != null) {
+            viewPager.setOffscreenPageLimit(3);
+            viewPager.setAdapter(adapter);
+
+            /**
+             * Setup the mTabLayout with view pager
+             */
+            tabLayout.setupWithViewPager(viewPager);
+        }
     }
 
     public class SectionPagerAdapter extends FragmentStatePagerAdapter {
@@ -82,15 +94,15 @@ public class StockDetailActivity extends AppCompatActivity {
              */
             switch (position) {
                 case 0:
-                    fragment = NewsFragment.newInstance("YHOO");
+                    fragment = NewsFragment.newInstance(mSymbol);
                     break;
                 case 1:
-                    fragment = NewsFragment.newInstance("YHOO");
+                    fragment = NewsFragment.newInstance(mSymbol);
                     break;
                 case 2:
-                    fragment = NewsFragment.newInstance("YHOO");
+                    fragment = NewsFragment.newInstance(mSymbol);
                 default:
-                    fragment = NewsFragment.newInstance("YHOO");
+                    fragment = NewsFragment.newInstance(mSymbol);
                     break;
             }
 

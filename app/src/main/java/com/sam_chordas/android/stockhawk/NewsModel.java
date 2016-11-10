@@ -3,7 +3,7 @@ package com.sam_chordas.android.stockhawk;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Created by galaxywizkid on 11/9/16.
+ * POJO for the NewsModel
  */
 public class NewsModel {
 
