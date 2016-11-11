@@ -94,7 +94,7 @@ public class StockDetailActivity extends AppCompatActivity {
              */
             switch (position) {
                 case 0:
-                    fragment = NewsFragment.newInstance(mSymbol);
+                    fragment = CurrentStockDetailsFragment.newInstance(mSymbol);
                     break;
                 case 1:
                     fragment = NewsFragment.newInstance(mSymbol);

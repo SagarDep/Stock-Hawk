@@ -1,6 +1,7 @@
 package com.sam_chordas.android.stockhawk.api;
 
-import com.sam_chordas.android.stockhawk.NewsModel;
+import com.sam_chordas.android.stockhawk.model.CurrentStockModel;
+import com.sam_chordas.android.stockhawk.model.NewsModel;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface StocksApi {
 
     @GET("mservice.php")
     Call<List<NewsModel>> getNews(@Query("news") String symbol);
+
+    @GET("mservice.php")
+    Call<List<CurrentStockModel>> getStockDetails(@Query("symbol") String symbol);
 }

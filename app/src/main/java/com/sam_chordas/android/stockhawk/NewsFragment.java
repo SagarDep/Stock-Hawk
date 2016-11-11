@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.sam_chordas.android.stockhawk.adapters.NewsAdapter;
 import com.sam_chordas.android.stockhawk.api.StocksApi;
+import com.sam_chordas.android.stockhawk.model.NewsModel;
 
 import java.util.List;
 

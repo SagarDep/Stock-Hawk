@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk;
+package com.sam_chordas.android.stockhawk.adapters;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.sam_chordas.android.stockhawk.NewsFragment;
+import com.sam_chordas.android.stockhawk.R;
+import com.sam_chordas.android.stockhawk.model.NewsModel;
 
 import java.util.List;
 
