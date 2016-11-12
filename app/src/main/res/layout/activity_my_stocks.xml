@@ -15,6 +15,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="16sp"
+        android:contentDescription="@string/network_toast"
         android:text="@string/network_toast"
         android:textColor="@color/primary_text"
         android:visibility="gone"/>
