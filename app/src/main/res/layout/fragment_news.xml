@@ -1,13 +1,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/default_16dp_margin"
+              android:paddingEnd="@dimen/default_16dp_margin"
+              android:paddingLeft="@dimen/default_16dp_margin"
+              android:paddingRight="@dimen/default_16dp_margin"
+              android:paddingStart="@dimen/default_16dp_margin"
+              android:paddingTop="@dimen/default_16dp_margin">
 
     <TextView
         android:id="@+id/tv_news_feed_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_16dp_margin"
         android:contentDescription="@string/news_feed"
         android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
