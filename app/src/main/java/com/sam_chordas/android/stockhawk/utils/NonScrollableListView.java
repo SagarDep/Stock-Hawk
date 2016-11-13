@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk;
+package com.sam_chordas.android.stockhawk.utils;
 
 import android.content.Context;
 import android.util.AttributeSet;

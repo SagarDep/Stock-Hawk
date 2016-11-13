@@ -11,6 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.sam_chordas.android.stockhawk.ui.fragments.ChartFragment;
+import com.sam_chordas.android.stockhawk.ui.fragments.CurrentStockDetailsFragment;
+import com.sam_chordas.android.stockhawk.ui.fragments.NewsFragment;
+import com.sam_chordas.android.stockhawk.utils.Constants;
+
 /**
  * Represents the home screen of the app which
  * //TODO: Add comments for other fragments
@@ -33,8 +38,6 @@ public class StockDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // TODO: Create menu xml file for sharing stock data and inflate it
-        //getMenuInflater().inflate(R.menu.);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -97,10 +100,8 @@ public class StockDetailActivity extends AppCompatActivity {
                     fragment = CurrentStockDetailsFragment.newInstance(mSymbol);
                     break;
                 case 1:
-                    fragment = NewsFragment.newInstance(mSymbol);
+                    fragment = ChartFragment.newInstance(mSymbol);
                     break;
-                case 2:
-                    fragment = NewsFragment.newInstance(mSymbol);
                 default:
                     fragment = NewsFragment.newInstance(mSymbol);
                     break;

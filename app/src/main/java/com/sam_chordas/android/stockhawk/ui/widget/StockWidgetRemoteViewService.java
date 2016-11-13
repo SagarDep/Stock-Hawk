@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.widget;
+package com.sam_chordas.android.stockhawk.ui.widget;
 
 import android.content.Intent;
 import android.database.Cursor;

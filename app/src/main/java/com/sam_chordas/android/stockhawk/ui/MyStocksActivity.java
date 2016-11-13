@@ -27,7 +27,7 @@ import com.google.android.gms.gcm.GcmNetworkManager;
 import com.google.android.gms.gcm.PeriodicTask;
 import com.google.android.gms.gcm.Task;
 import com.melnykov.fab.FloatingActionButton;
-import com.sam_chordas.android.stockhawk.Constants;
+import com.sam_chordas.android.stockhawk.utils.Constants;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.StockDetailActivity;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
@@ -96,6 +96,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                  */
                 TextView tv = (TextView) v.findViewById(R.id.stock_symbol);
                 String stock = tv.getText().toString();
+                tv.setContentDescription(stock);
                 Intent intent = new Intent(MyStocksActivity.this, StockDetailActivity.class);
                 intent.putExtra(Constants.SYMBOL, stock);
                 startActivity(intent);
@@ -178,7 +179,9 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
   public void networkToast(){
     Toast.makeText(mContext, getString(R.string.network_toast), Toast.LENGTH_SHORT).show();
     TextView emptyView = (TextView) findViewById(R.id.empty_view);
-    emptyView.setVisibility(View.VISIBLE);
+    if (emptyView != null) {
+      emptyView.setVisibility(View.VISIBLE);
+    }
 
   }
 

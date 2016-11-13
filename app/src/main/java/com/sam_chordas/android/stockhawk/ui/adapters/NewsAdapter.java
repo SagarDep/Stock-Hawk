@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.adapters;
+package com.sam_chordas.android.stockhawk.ui.adapters;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.sam_chordas.android.stockhawk.NewsFragment;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.model.NewsModel;
+import com.sam_chordas.android.stockhawk.ui.fragments.NewsFragment;
 
 import java.util.List;
 
@@ -43,18 +43,22 @@ public class NewsAdapter extends ArrayAdapter<NewsModel> {
             view = inflater.inflate(R.layout.news_single_list_item, parent, false);
         }
 
+        // Initialize views
         TextView newsTitle = ButterKnife.findById(view, R.id.tv_news_title);
         TextView newsContent = ButterKnife.findById(view, R.id.tv_news_content);
         TextView newsPublisher = ButterKnife.findById(view, R.id.tv_publisher);
         TextView newsDate = ButterKnife.findById(view, R.id.tv_publish_date);
 
         newsTitle.setText(newsModelList.get(position).getTitle());
+        newsTitle.setContentDescription(newsModelList.get(position).getTitle());
         newsTitle.setPaintFlags(Paint.UNDERLINE_TEXT_FLAG);
 
         newsContent.setText(newsModelList.get(position).getContent());
+        newsContent.setContentDescription(newsModelList.get(position).getContent());
         newsPublisher.setText(newsModelList.get(position).getPublisher());
+        newsPublisher.setContentDescription(newsModelList.get(position).getPublisher());
         newsDate.setText(newsModelList.get(position).getDate());
-
+        newsDate.setContentDescription(newsModelList.get(position).getDate());
         return view;
     }
 }

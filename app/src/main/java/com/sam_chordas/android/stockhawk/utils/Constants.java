@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk;
+package com.sam_chordas.android.stockhawk.utils;
 
 /**
  * Created by galaxywizkid on 11/9/16.

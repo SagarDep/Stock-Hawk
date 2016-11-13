@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                xmlns:tools="http://schemas.android.com/tools">
+                android:layout_height="match_parent">
+
     <TextView
         android:id="@+id/tv_news_title"
         android:layout_width="match_parent"
@@ -10,10 +11,11 @@
         android:layout_marginLeft="@dimen/default_16dp_margin"
         android:layout_marginRight="@dimen/default_16dp_margin"
         android:layout_marginTop="@dimen/default_16dp_margin"
+        android:ellipsize="end"
         android:fontFamily="sans-serif"
         android:maxLines="3"
         android:textColor="@color/primary_text"
-        android:textSize="34sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         tools:text="Facebook Hires Developer Oben To Head Engineering"/>
 
@@ -25,9 +27,9 @@
         android:layout_marginLeft="@dimen/default_16dp_margin"
         android:layout_marginRight="@dimen/default_16dp_margin"
         android:layout_marginTop="@dimen/default_16dp_margin"
+        android:ellipsize="end"
         android:fontFamily="sans-serif"
         android:maxLines="6"
-        android:ellipsize="end"
         android:textColor="@color/primary_text"
         android:textSize="22sp"
         tools:text="Lorem ipsum text is similar to the natural typeface (of English) and thus more likely to uncover flaws in the design of desktop/web applications or web sites regarding word wrapping etc."/>
@@ -40,6 +42,7 @@
         android:layout_marginLeft="@dimen/default_16dp_margin"
         android:layout_marginStart="@dimen/default_16dp_margin"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/publisher_title"
         android:fontFamily="sans-serif"
         android:text="@string/publisher_title"
         android:textColor="@color/primary_text"
@@ -61,19 +64,6 @@
         android:textSize="17sp"
         tools:text="NewYork Times"/>
 
-    <TextView
-        android:id="@+id/tv_date_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_publisher_title"
-        android:layout_marginLeft="@dimen/default_16dp_margin"
-        android:layout_marginStart="@dimen/default_16dp_margin"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/date_title"
-        android:textColor="@color/secondary_text"
-        android:textSize="17sp"/>
-
 
     <TextView
         android:id="@+id/tv_publish_date"
@@ -93,6 +83,7 @@
 
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/tv_publish_date"
@@ -100,4 +91,17 @@
         android:layout_marginRight="@dimen/default_16dp_margin"
         android:layout_marginTop="12dp"
         android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:id="@+id/tv_date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view"
+        android:layout_alignLeft="@+id/tv_publisher_title"
+        android:layout_alignStart="@+id/tv_publisher_title"
+        android:contentDescription="@string/date_title"
+        android:fontFamily="sans-serif"
+        android:text="@string/date_title"
+        android:textColor="@color/secondary_text"
+        android:textSize="17sp"/>
 </RelativeLayout>

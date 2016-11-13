@@ -25,8 +25,12 @@
     <string name="stock_details_label">Stock Details</string>
     <string name="publisher_title">Publisher:</string>
     <string name="date_title">Date:</string>
+    <string name="failed_to_retrieve_data">Failed to retrieve data</string>
+    <string name="loading">Loading</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="chart_showing_stock_s_value_over_time">Chart showing stock\'s value over time</string>
+    <string name="add_stock">Add stock</string>
+
 
 </resources>

@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk;
+package com.sam_chordas.android.stockhawk.ui.fragments;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -13,13 +13,16 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sam_chordas.android.stockhawk.adapters.NewsAdapter;
+import com.sam_chordas.android.stockhawk.utils.Constants;
+import com.sam_chordas.android.stockhawk.R;
+import com.sam_chordas.android.stockhawk.ui.adapters.NewsAdapter;
 import com.sam_chordas.android.stockhawk.api.StocksApi;
 import com.sam_chordas.android.stockhawk.model.NewsModel;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,7 +44,7 @@ public class NewsFragment extends Fragment {
     }
 
     public static final String LOG_TAG = NewsFragment.class.getSimpleName();
-    ProgressDialog progress;
+    private ProgressDialog progress;
 
 
     public NewsFragment() {
@@ -55,8 +58,6 @@ public class NewsFragment extends Fragment {
 
         // Inspired by rahulravindran0108
         String symbol = getArguments().getString(Constants.SYMBOL);
-        // TODO: Once you get the name of the company from the stock info, use if to change details
-        // view header title
 
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -94,13 +95,13 @@ public class NewsFragment extends Fragment {
     }
 
     public void failedToGetDataToast(){
-        Toast.makeText(getActivity(), "Failed to retrieve news", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), R.string.failed_to_retrieve_data, Toast.LENGTH_SHORT).show();
     }
 
-    public void loadProgressDialog(){
+    private void loadProgressDialog(){
         progress = new ProgressDialog(getContext());
-        progress.setTitle("Loading");
-        progress.setCancelable(false);
+        progress.setTitle(getString(R.string.loading));
+        progress.setCancelable(true);
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progress.show();
     }

@@ -52,7 +52,7 @@
 
         <!-- Stocks Widget -->
         <receiver
-            android:name=".widget.StocksWidgetProvider"
+            android:name=".ui.widget.StocksWidgetProvider"
             android:label="@string/widget_title">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -65,7 +65,7 @@
 
         <!--RemoteViews service is used to fill in the data in widget listView-->
         <service
-            android:name=".widget.StockWidgetRemoteViewService"
+            android:name=".ui.widget.StockWidgetRemoteViewService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>

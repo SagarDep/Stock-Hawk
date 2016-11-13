@@ -8,12 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_16dp_margin"
+        android:contentDescription="@string/news_feed"
         android:fontFamily="sans-serif"
-        android:textStyle="italic"
         android:gravity="center_horizontal"
         android:text="@string/news_feed"
         android:textColor="@color/primary_text"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:textStyle="italic"/>
 
     <ListView
         android:id="@+id/news_list_view"
