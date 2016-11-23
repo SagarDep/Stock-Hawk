@@ -3,6 +3,8 @@ Project 3 for Udacity's Android Nano-Degreee.
 
 Taking a stocks app from a functional state to a production-ready state
 
+Video preview: https://youtu.be/RtM19EyEOMY
+
 ## Features
 The following **required** functionality is completed
 - [x] Each stock is clickable and displays a graph of the stock’s value over time
