@@ -23,5 +23,6 @@ if exists fastlane; then
 else
     echo ">> fastlane not found"
     echo ">> install fastlane now? "
+    gem install fastlane -NV
 
 fi
