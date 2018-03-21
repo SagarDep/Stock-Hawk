@@ -8,7 +8,7 @@ Video preview: https://youtu.be/RtM19EyEOMY
 ## Features
 The following **required** functionality is completed
 - [x] Each stock is clickable and displays a graph of the stock’s value over time
-- [x] App does not crash when a user searches for a non-existent stock
+- [x] App does not crash when a user searches for a non-existent stock.
 - [x] Stocks can be displayed in a collection widget.
 - [x] App has content descriptions for all buttons
 - [x] App supports layout mirroring for RTL layouts
