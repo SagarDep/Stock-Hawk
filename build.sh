@@ -24,5 +24,14 @@ else
     echo ">> fastlane not found"
     echo ">> install fastlane now? "
     gem install fastlane -NV
-
 fi
+
+if exists ruby; then
+        echo ">> Installing fastlane via ruby"
+        gem install fastlane -NV
+    else
+        echo ">> Could not find a ruby installation."
+        echo ">> Please install ruby on the CI system so that we can install fastlane or provide your own installation of fastlane."
+        exit 1
+fi
+
