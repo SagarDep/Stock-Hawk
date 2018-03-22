@@ -28,6 +28,7 @@ else
     gem install fastlane -NV
 fi
 
+echo "$BRANCH_NAME"
 
 if [[ "$CI_BRANCH" == *"master" ]]; then
     echo ">> This is a PROD build"
