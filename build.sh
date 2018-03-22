@@ -30,6 +30,7 @@ if exists ruby; then
         echo ">> Installing fastlane via ruby"
         gem install fastlane -NV
     else
+        echo $GIT_BRANCH
         echo ">> Could not find a ruby installation."
         echo ">> Please install ruby on the CI system so that we can install fastlane or provide your own installation of fastlane."
         exit 1
