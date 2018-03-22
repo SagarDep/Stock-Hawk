@@ -29,7 +29,7 @@ else
 fi
 
 
-if [[ "$CI_BRANCH" == "origin/master" ]]; then
+if [[ "$CI_BRANCH" == "*master" ]]; then
     echo ">> This is a PROD build"
 else
     echo ">> This is DEV build."
