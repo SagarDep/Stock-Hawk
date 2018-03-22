@@ -6,6 +6,8 @@ echo "Executing build.sh"
 export CI_LANE_DEV=${CI_LANE_DEV:="alpha"}
 export CI_LANE_STAGE=${CI_LANE_STAGE:="beta"}
 export CI_LANE_PROD=${CI_LANE_PROD:="deploy"}
+export CI_BRANCH=${GIT_BRANCH:=""}
+
 
 ############################################
 ## Define custom fastlane parameters here ##
@@ -26,13 +28,10 @@ else
     gem install fastlane -NV
 fi
 
-if exists ruby; then
-        echo ">> Installing fastlane via ruby"
-        gem install fastlane -NV
-    else
-        echo ${CI_LANE_DEV}
-        echo ">> Could not find a ruby installation."
-        echo ">> Please install ruby on the CI system so that we can install fastlane or provide your own installation of fastlane."
-        exit 1
+
+if [[ "$CI_BRANCH" == "origin/master" ]]; then
+    echo ">> This is a PROD build"
+else
+    echo ">> This is DEV build."
 fi
 
