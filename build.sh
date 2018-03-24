@@ -37,7 +37,7 @@ export CI_INSTALL_FASTLANE=${INSTALL_FASTLANE:=false}
 if [[ $CI_INSTALL_FASTLANE == "true" ]]; then
     if exists ruby; then
             echo ">> Installing fastlane via ruby"
-            gem install fastlane -NV || exit 1
+            gem install fastlane -NV --user-install || exit 1
         else
             echo ">> Could not find a ruby installation."
             echo ">> Please install ruby on the CI system so that we can install fastlane or provide your own installation of fastlane."
