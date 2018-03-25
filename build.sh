@@ -36,7 +36,7 @@ export CI_INSTALL_FASTLANE=${INSTALL_FASTLANE:=false}
 if [[ $CI_INSTALL_FASTLANE == "true" ]]; then
     if exists ruby; then
             echo ">> Installing fastlane via ruby"
-            gem install fastlane -NV --user-install || exit 1
+            gem install fastlane -NV || exit 1
         else
             echo ">> Could not find a ruby installation."
             echo ">> Please install ruby on the CI system so that we can install fastlane or provide your own installation of fastlane."
@@ -67,7 +67,7 @@ if [[ "$CI_LANE" != "" ]]; then
     echo ">> Building lane $CI_LANE"
     export CI_FAST_LANE_CMD="fastlane android $CI_LANE configuration:$CI_CONFIGURATION versionCode:$CI_VERSION_CODE googlePlayChannel:$CI_GOOGLE_PLAY_CHANNEL"
     echo ">> Running command: $CI_FAST_LANE_CMD"
-    $CI_FASTLANE_CMD
+    $CI_FAST_LANE_CMD
 
 else
     echo ">> Could not find a lane to build!"
