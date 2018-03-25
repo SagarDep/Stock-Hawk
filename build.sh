@@ -16,6 +16,19 @@ export CI_GOOGLE_PLAY_CHANNEL=${CI_GOOGLE_PLAY_CHANNEL:="beta"}
 CI_LANE=${CI_LANE:=""}
 
 
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
+echo $GIT_BRANCH
 
 exists()
 {
