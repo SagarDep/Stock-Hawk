@@ -28,8 +28,7 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
-    sh (echo "this is working")
-    #gradle(task: "clean assembleRelease")
+    gradle(task: "clean assembleDebug")
     #upload_to_play_store
   end
 end
