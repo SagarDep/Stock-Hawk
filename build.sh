@@ -6,7 +6,7 @@ export CI_LANE_DEV=${CI_LANE_DEV:="alpha"}
 export CI_LANE_PROD=${CI_LANE_PROD:="deploy"}
 
 export CI_BRANCH=${GIT_BRANCH:=""}
-export CI_BRANCH_PROD=${CI_BRANCH_PROD:="master"}
+export CI_BRANCH_PROD=${CI_BRANCH_PROD:=*"master"}
 export CI_BRANCH_STAGE=${CI_BRANCH_DEV:="develop"*}
 
 export CI_CONFIGURATION=${CI_CONFIGURATION:="Release"}
@@ -15,20 +15,6 @@ export CI_VERSION_CODE=${BUILD_NUMBER:="1"}
 export CI_GOOGLE_PLAY_CHANNEL=${CI_GOOGLE_PLAY_CHANNEL:="beta"}
 CI_LANE=${CI_LANE:=""}
 
-
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
-echo $GIT_BRANCH
 
 exists()
 {
