@@ -28,7 +28,9 @@ platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
-    gradle(task: "clean assembleDebug")
+    put "the env variable output is "
+    puts ENV['BUILD_NUMBER']
+    #gradle(task: "clean assembleDebug")
     #upload_to_play_store
   end
 end
